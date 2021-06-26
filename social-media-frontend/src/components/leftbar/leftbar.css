@@ -5,7 +5,7 @@
 }
 
 ::-webkit-scrollbar{
-    width: 8px;
+    width: 4px;
 }
 ::-webkit-scrollbar-track{
     background-color: rgb(206, 205, 203);
