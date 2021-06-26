@@ -1,0 +1,33 @@
+.navbarContainer{
+    height: 50px;
+    width: 100%;
+    background-color: rgb(48, 79, 182);
+    display: flex;/*all iteam in same row*/
+    align-items: center;
+    position: sticky;
+    top: 0;/*every time in top*/
+}
+/*divide top bar to three parts*/
+.topbarLeft{
+    flex: 3;
+   
+}
+.logo{
+    font-size: 24px;
+    margin-left: 20px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+.topbarCenter{
+    flex: 5;
+   
+}
+.topbarRight{
+    flex: 4;
+    
+}
+.topbarImage{
+    width: 30px;
+    height: 30px;
+}
