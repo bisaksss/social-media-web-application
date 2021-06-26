@@ -4,7 +4,7 @@ import {Search,Person,Chat,Notifications} from "@material-ui/icons";
 export default function navbar() {
     return (
         <div className="navbarContainer">
-            <div className="topbarLeft">
+            <div className="topbarLeft" >
                 <span className="logo">BSB Social</span>
             </div>
             <div className="topbarCenter">
