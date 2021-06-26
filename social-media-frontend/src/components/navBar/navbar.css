@@ -23,11 +23,67 @@
     flex: 5;
    
 }
+
+.searchbar{
+    width: 100%;
+    height: 30px;
+    background-color: white;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+}
+.searchIcon{
+    font-size: 20px !important;
+    margin-left: 10px;;
+}
+.searchInput{
+    border: none;
+    width: 80%;
+    text-align: center;
+}
+
+.searchInput:focus{/*when mouse over the input we can use focus*/
+    outline: none;
+}
 .topbarRight{
     flex: 4;
-    
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    color: white;
+   
 }
+.topbarlink{
+    margin-right: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.topbarIcons{
+    display: flex;
+}
+.topbarIconItem{
+    margin-right: 15px;
+    cursor: pointer;
+    position: relative;
+}
+.topbarIconBadge{
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+}
+
 .topbarImage{
     width: 30px;
     height: 30px;
+    border-radius: 50%;
+    object-fit: cover;/*get image look better*/
+    cursor: pointer;
 }

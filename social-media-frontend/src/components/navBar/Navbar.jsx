@@ -9,8 +9,8 @@ export default function navbar() {
             </div>
             <div className="topbarCenter">
                 <div className="searchbar">
-                    <Search/>
-                    <input placeholder="Search friend or post" className="searchInput" />
+                    <Search className="searchIcon"/>
+                    <input placeholder="Search Friend or Post" className="searchInput" />
                 </div>
             </div>
             <div className="topbarRight">
