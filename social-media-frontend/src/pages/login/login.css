@@ -45,4 +45,33 @@
     height: 50px;
     border-radius: 10px;
     border:1px solid black;
+    font-size: 18px;
+    padding-left: 20px;
+}
+.loginInput:focus{
+    outline: none;
+}
+.loginButoon{
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(67, 67, 233);
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.loginForgot{
+    text-align: center;
+    color: rgb(13, 13, 155);
+}
+.loginregister{
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(26, 212, 104);
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
 }
