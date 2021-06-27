@@ -2,6 +2,8 @@
    flex: 3;
    height: calc(100vh - 50px);
    overflow-y: scroll;/*can add scroll for pretucular div*/
+   position: sticky;/*can stop same place in window*/
+   top: 50px;
 }
 
 ::-webkit-scrollbar{
@@ -39,21 +41,4 @@
 }
 .sidebarHR{
     margin: 20px 0;
-}
-.sidebarFriendList{
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-.sidebarFriendListItem{
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-.sidebarImage{
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 10px;
 }

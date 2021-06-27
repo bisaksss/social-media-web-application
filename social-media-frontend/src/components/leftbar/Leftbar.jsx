@@ -1,5 +1,7 @@
 import "./leftbar.css";
 import {RssFeed,Chat,VideoCall,Group,Bookmark,QuestionAnswer,Work} from "@material-ui/icons";
+import {Users} from "../../dummyData";
+import CloseFriends from "../closeFriends/CloseFriends";
 
 export default function Leftbar() {
     return (
@@ -39,46 +41,9 @@ export default function Leftbar() {
                     <button className="sidebarButton">Show More</button>
                     <hr className="sidebarHR" />
                     <ul className="sidebarFriendList">
-                        <li className="sidebarFriendListItem">
-                            <img src="/assets/propic2.jpg" alt="" className="sidebarImage" />
-                            <span className="sidebarFriendName">Bisak Sampath</span>
-                        </li>
-                        <li className="sidebarFriendListItem">
-                            <img src="/assets/propic2.jpg" alt="" className="sidebarImage" />
-                            <span className="sidebarFriendName">Bisak Sampath</span>
-                        </li>
-                        <li className="sidebarFriendListItem">
-                            <img src="/assets/propic2.jpg" alt="" className="sidebarImage" />
-                            <span className="sidebarFriendName">Bisak Sampath</span>
-                        </li>
-                        <li className="sidebarFriendListItem">
-                            <img src="/assets/propic2.jpg" alt="" className="sidebarImage" />
-                            <span className="sidebarFriendName">Bisak Sampath</span>
-                        </li>
-                        <li className="sidebarFriendListItem">
-                            <img src="/assets/propic2.jpg" alt="" className="sidebarImage" />
-                            <span className="sidebarFriendName">Bisak Sampath</span>
-                        </li>
-                        <li className="sidebarFriendListItem">
-                            <img src="/assets/propic2.jpg" alt="" className="sidebarImage" />
-                            <span className="sidebarFriendName">Bisak Sampath</span>
-                        </li>
-                        <li className="sidebarFriendListItem">
-                            <img src="/assets/propic2.jpg" alt="" className="sidebarImage" />
-                            <span className="sidebarFriendName">Bisak Sampath</span>
-                        </li>
-                        <li className="sidebarFriendListItem">
-                            <img src="/assets/propic2.jpg" alt="" className="sidebarImage" />
-                            <span className="sidebarFriendName">Bisak Sampath</span>
-                        </li>
-                        <li className="sidebarFriendListItem">
-                            <img src="/assets/propic2.jpg" alt="" className="sidebarImage" />
-                            <span className="sidebarFriendName">Bisak Sampath</span>
-                        </li>
-                        <li className="sidebarFriendListItem">
-                            <img src="/assets/propic2.jpg" alt="" className="sidebarImage" />
-                            <span className="sidebarFriendName">Bisak Sampath</span>
-                        </li>
+                      {Users.map(u=>(
+                          <CloseFriends key={u.id} friend={u}/>
+                      ))}
                     </ul>
                 
             </div>

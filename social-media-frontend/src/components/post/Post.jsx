@@ -1,17 +1,25 @@
 import "./post.css"
 import {MoreVert} from "@material-ui/icons"
 import { Users } from "../../dummyData";
+import { useState } from "react";
 
 export default function Post(post) {
-   
+   //const user=Users.filter((u)=>(u.id===1));
+   //console.log(user[0].userName);
+   const [like,setLike]= useState(post.post.like);
+   const [liked,setLiked]= useState(false);
+    const likeHandeler = () =>{
+        setLike(liked ? like-1 : like +1);
+        setLiked(!liked);
+    };
     return (
         <div className="post">
             <div className="postWrapper">
                 <div className="postTop">
                     <div className="postTopLeft">
-                        <img src="/assets/IMG_2198.jpg" alt="" className="postTopLeftImage" />
+                        <img src={Users.filter((u)=>(u.id===post.post.userId))[0].ProfilePicture} alt="" className="postTopLeftImage" />
                         <span className="postTopLeftUserName">
-                            Bisak Sampath
+                            {Users.filter((u)=>(u.id===post.post.userId))[0].userName}
                         </span>
                         <span className="postTopLeftTime">
                             {post.post.date}
@@ -27,9 +35,9 @@ export default function Post(post) {
                 </div>
                 <div className="postBottom">
                     <div className="postBottomLeft">
-                        <img src="/assets/like.png" alt="" className="bottomLike" />
-                        <img src="/assets/favourite.png" alt="" className="bottomLike" />
-                        <span className="likeCounter">{post.post.like} People like it</span>
+                       { /*<img src="/assets/like.png" alt="" className="bottomLike" onClick={likeHandeler}/>*/}
+                        <img src="/assets/favourite.png" alt="" className="bottomLike" onClick={likeHandeler}/>
+                        <span className="likeCounter">{like} People like it</span>
                     </div>
                     <div className="postBottomRight">
                         <span className="postCommentText">{post.post.comment} comments</span>
