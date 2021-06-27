@@ -1,7 +1,9 @@
 import "./post.css"
 import {MoreVert} from "@material-ui/icons"
+import { Users } from "../../dummyData";
 
-export default function Post() {
+export default function Post(post) {
+   
     return (
         <div className="post">
             <div className="postWrapper">
@@ -12,7 +14,7 @@ export default function Post() {
                             Bisak Sampath
                         </span>
                         <span className="postTopLeftTime">
-                            2 mins ago
+                            {post.post.date}
                         </span>
                     </div>
                     <div className="postTopRight">
@@ -20,17 +22,17 @@ export default function Post() {
                     </div>
                 </div>
                 <div className="postCenter">
-                    <span className="postTa">Its my first post</span>
-                    <img src="/assets/post.jpg" alt="" className="postCenterImage" />
+                    <span className="postTa">{post.post?.description}</span>
+                    <img src={post.post.photo} alt="" className="postCenterImage" />
                 </div>
                 <div className="postBottom">
                     <div className="postBottomLeft">
                         <img src="/assets/like.png" alt="" className="bottomLike" />
                         <img src="/assets/favourite.png" alt="" className="bottomLike" />
-                        <span className="likeCounter">50 People like it</span>
+                        <span className="likeCounter">{post.post.like} People like it</span>
                     </div>
                     <div className="postBottomRight">
-                        <span className="postCommentText">10 comments</span>
+                        <span className="postCommentText">{post.post.comment} comments</span>
                     </div>
                 </div>
             </div>
