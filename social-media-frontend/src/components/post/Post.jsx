@@ -1,15 +1,35 @@
 import "./post.css"
 import {MoreVert} from "@material-ui/icons"
-import { Users } from "../../dummyData";
-import { useState } from "react";
+//import { Users } from "../../dummyData";
+import { useEffect,useState } from "react";
+import axios from "axios";
+import {format} from "timeago.js";
 
 export default function Post(post) {
    //const user=Users.filter((u)=>(u.id===1));
    //console.log(user[0].userName);
-   const [like,setLike]= useState(post.post.like);
+   console.log(post);
+  
+   const [like,setLike]= useState(post.post.likes.length);
    const [liked,setLiked]= useState(false);
+   const [user,setUser]=useState({});
+   console.log(user);
+
 
    const publicFolder=process.env.REACT_APP_PUBLIC_FOLDER;
+   useEffect( ()=>{
+
+    const fetchUser=async ()=>{
+        const res= await axios.get(`/users/${post.post.userId}`);
+        setUser(res.data);
+    }
+   
+   fetchUser();
+},[post.post.userId])
+
+
+
+
     const likeHandeler = () =>{
         setLike(liked ? like-1 : like +1);
         setLiked(!liked);
@@ -19,12 +39,12 @@ export default function Post(post) {
             <div className="postWrapper">
                 <div className="postTop">
                     <div className="postTopLeft">
-                        <img src={Users.filter((u)=>(u.id===post.post.userId))[0].ProfilePicture} alt="" className="postTopLeftImage" />
+                        <img src={user.profilePicture || publicFolder+"/propic/avatar.png"} alt="" className="postTopLeftImage" />
                         <span className="postTopLeftUserName">
-                            {Users.filter((u)=>(u.id===post.post.userId))[0].userName}
+                            {user.userName}
                         </span>
                         <span className="postTopLeftTime">
-                            {post.post.date}
+                            {format(post.post.createdAt)}
                         </span>
                     </div>
                     <div className="postTopRight">
@@ -32,8 +52,8 @@ export default function Post(post) {
                     </div>
                 </div>
                 <div className="postCenter">
-                    <span className="postTa">{post.post?.description}</span>
-                    <img src={publicFolder+post.post.photo} alt="" className="postCenterImage" />
+                    <span className="postTa">{post.post?.discription}</span>
+                    <img src={publicFolder+post.post.image} alt="" className="postCenterImage" />
                 </div>
                 <div className="postBottom">
                     <div className="postBottomLeft">
