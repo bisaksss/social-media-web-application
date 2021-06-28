@@ -3,17 +3,17 @@ import {Users} from "../../dummyData";
 import Online from "../onlinePersons/Online";
 
 export default function Rightbar({profile}) {
-
+    const publicFolder=process.env.REACT_APP_PUBLIC_FOLDER;
     const HomeRightBar=()=>{
         return(
         <>
             <div className="birthdayContainer">
-                <img src="/assets/cake.png" alt="" className="birthdayImage" />
+                <img src={`${publicFolder}cake.png`} alt="" className="birthdayImage" />
                 <span className="birthdayText">
                 <b>Bisak Sampath</b>  and <b>3 others friends </b>have a birthday today
                 </span>
             </div>
-                <img src="/assets/ads2.png" alt="" className="adsImage" />
+                <img src={`${publicFolder}ads2.png`} alt="" className="adsImage" />
                 <h5 className="rightbarTitle">Online friends</h5>
                 <ul className="friendList">
                     {Users.map(u=>(
@@ -47,35 +47,35 @@ export default function Rightbar({profile}) {
             <h4 className="rightbarTitle">User Friends</h4>
             <div className="rightbarFollowings">
                 <div className="rightbarFollowing">
-                    <img src="/assets/propic2.jpg" alt="" className="rightbarFollowingImage" />
+                    <img src={`${publicFolder}propic2.jpg`} alt="" className="rightbarFollowingImage" />
                     <span className="rightbarFollowingName">Hashini Nishika</span>
                 </div>
            
             
                 <div className="rightbarFollowing">
-                    <img src="/assets/propic2.jpg" alt="" className="rightbarFollowingImage" />
+                    <img src={`${publicFolder}propic2.jpg`} alt="" className="rightbarFollowingImage" />
                     <span className="rightbarFollowingName">Hashini Nishika</span>
                 </div>
            
             
                 <div className="rightbarFollowing">
-                    <img src="/assets/propic2.jpg" alt="" className="rightbarFollowingImage" />
+                    <img src={`${publicFolder}propic2.jpg`} alt="" className="rightbarFollowingImage" />
                     <span className="rightbarFollowingName">Hashini Nishika</span>
                 </div>
           
           
                 <div className="rightbarFollowing">
-                    <img src="/assets/propic2.jpg" alt="" className="rightbarFollowingImage" />
+                    <img src={`${publicFolder}propic2.jpg`} alt="" className="rightbarFollowingImage" />
                     <span className="rightbarFollowingName">Hashini Nishika</span>
                 </div>
          
            
                 <div className="rightbarFollowing">
-                    <img src="/assets/propic2.jpg" alt="" className="rightbarFollowingImage" />
+                    <img src={`${publicFolder}propic2.jpg`} alt="" className="rightbarFollowingImage" />
                     <span className="rightbarFollowingName">Hashini Nishika</span>
                 </div>
                 <div className="rightbarFollowing">
-                    <img src="/assets/propic2.jpg" alt="" className="rightbarFollowingImage" />
+                    <img src={`${publicFolder}propic2.jpg`} alt="" className="rightbarFollowingImage" />
                     <span className="rightbarFollowingName">Hashini Nishika</span>
                 </div>
             </div>

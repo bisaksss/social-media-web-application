@@ -5,6 +5,7 @@ import Rightbar from "../../components/rightbar/Rightbar";
 import Feed from "../../components/feed/Feed";
 
 export default function Profile() {
+    const publicFolder=process.env.REACT_APP_PUBLIC_FOLDER;
     return (
         <>
             <Navbar/> 
@@ -13,8 +14,8 @@ export default function Profile() {
             <div className="profileRight">
                 <div className="profileRightTop">
                     <div className="profileCover">
-                        <img src="/assets/CoverImage/cover_bisak.jpg" alt="" className="coverImage" />
-                        <img src="/assets/IMG_2198.jpg" alt="" className="profileImage" />
+                        <img src={`${publicFolder}CoverImage/cover_bisak.jpg`} alt="" className="coverImage" />
+                        <img src={`${publicFolder}IMG_2198.jpg`} alt="" className="profileImage" />
                     </div>
                     <div className="profileInfo">
                         <h4 className="profileInfoName">Bisak Sampath</h4>
@@ -26,7 +27,7 @@ export default function Profile() {
                 </div>
                 <div className="profileRightBottom">
                 <Feed/>
-                <Rightbar profilezz/>
+                <Rightbar profile/>
                 </div>
             </div>
 

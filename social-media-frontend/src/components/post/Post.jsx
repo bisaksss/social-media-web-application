@@ -8,6 +8,8 @@ export default function Post(post) {
    //console.log(user[0].userName);
    const [like,setLike]= useState(post.post.like);
    const [liked,setLiked]= useState(false);
+
+   const publicFolder=process.env.REACT_APP_PUBLIC_FOLDER;
     const likeHandeler = () =>{
         setLike(liked ? like-1 : like +1);
         setLiked(!liked);
@@ -31,12 +33,12 @@ export default function Post(post) {
                 </div>
                 <div className="postCenter">
                     <span className="postTa">{post.post?.description}</span>
-                    <img src={post.post.photo} alt="" className="postCenterImage" />
+                    <img src={publicFolder+post.post.photo} alt="" className="postCenterImage" />
                 </div>
                 <div className="postBottom">
                     <div className="postBottomLeft">
                        { /*<img src="/assets/like.png" alt="" className="bottomLike" onClick={likeHandeler}/>*/}
-                        <img src="/assets/favourite.png" alt="" className="bottomLike" onClick={likeHandeler}/>
+                        <img src={`${publicFolder}favourite.png`} alt="" className="bottomLike" onClick={likeHandeler}/>
                         <span className="likeCounter">{like} People like it</span>
                     </div>
                     <div className="postBottomRight">

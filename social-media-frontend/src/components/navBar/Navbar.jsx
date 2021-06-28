@@ -1,11 +1,14 @@
 import "./navbar.css";
 import {Search,Person,Chat,Notifications} from "@material-ui/icons";
+import {Link} from "react-router-dom";
 
 export default function navbar() {
     return (
         <div className="navbarContainer">
             <div className="topbarLeft" >
+                <Link style={{textDecoration:"none"}} to="/">
                 <span className="logo">BSB Social</span>
+                </Link>
             </div>
             <div className="topbarCenter">
                 <div className="searchbar">
