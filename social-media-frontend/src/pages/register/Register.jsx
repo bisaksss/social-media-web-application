@@ -23,7 +23,7 @@ export default function Register() {
 
             }
             try {
-                const res=await axios.post("auth/register",user);
+                await axios.post("auth/register",user);
                 history.push("/login");
             } catch (error) {
                 console.log(error);

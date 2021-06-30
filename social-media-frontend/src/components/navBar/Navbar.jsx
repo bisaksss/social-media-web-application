@@ -1,8 +1,12 @@
 import "./navbar.css";
 import {Search,Person,Chat,Notifications} from "@material-ui/icons";
 import {Link} from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
-export default function navbar() {
+export default function Navbar() {
+    const {user} = useContext(AuthContext);
+    const publicFolder=process.env.REACT_APP_PUBLIC_FOLDER;
     return (
         <div className="navbarContainer">
             <div className="topbarLeft" >
@@ -35,8 +39,9 @@ export default function navbar() {
                         <span className="topbarIconBadge">1</span>
                     </div>
                 </div>
-                
-                <img src="/assets/IMG_2198.jpg" alt="" className="topbarImage" />
+                <Link to={`/profile/${user.userName}`}>
+                <img src={user.profilePicture ? publicFolder+user.profilePicture : publicFolder+"propic/avatar.png"} alt="" className="topbarImage" />
+                </Link>
             </div>
         </div>
     )

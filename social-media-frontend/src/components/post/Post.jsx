@@ -1,10 +1,11 @@
 import "./post.css"
 import {MoreVert} from "@material-ui/icons"
 //import { Users } from "../../dummyData";
-import { useEffect,useState } from "react";
+import { useContext, useEffect,useState } from "react";
 import axios from "axios";
 import {format} from "timeago.js";
 import {Link} from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
 
 export default function Post(post) {
    //const user=Users.filter((u)=>(u.id===1));
@@ -15,6 +16,8 @@ export default function Post(post) {
    const [liked,setLiked]= useState(false);
    const [user,setUser]=useState({});
    //console.log(user);
+
+   const {user:currentUser} =useContext(AuthContext);//use nickname(currentUser), because user alredy here
 
 
    const publicFolder=process.env.REACT_APP_PUBLIC_FOLDER;
@@ -32,6 +35,11 @@ export default function Post(post) {
 
 
     const likeHandeler = () =>{
+        try {
+            axios.put("/posts/"+post.post._id+"/like",{userId:currentUser._id});
+        } catch (error) {
+            
+        }
         setLike(liked ? like-1 : like +1);
         setLiked(!liked);
     };
@@ -41,7 +49,7 @@ export default function Post(post) {
                 <div className="postTop">
                     <div className="postTopLeft">
                         <Link  to={`profile/${user.userName}`}>
-                        <img src={user.profilePicture || publicFolder+"/propic/avatar.png"} alt="" className="postTopLeftImage" />
+                        <img src={user.profilePicture ? publicFolder+user.profilePicture : publicFolder+"/propic/avatar.png"} alt="" className="postTopLeftImage" />
                         </Link>
                         <span className="postTopLeftUserName">
                             {user.userName}
