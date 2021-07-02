@@ -53,32 +53,7 @@ export default function Rightbar({user}) {
                 </div>
            
             
-                <div className="rightbarFollowing">
-                    <img src={`${publicFolder}propic2.jpg`} alt="" className="rightbarFollowingImage" />
-                    <span className="rightbarFollowingName">Hashini Nishika</span>
-                </div>
-           
-            
-                <div className="rightbarFollowing">
-                    <img src={`${publicFolder}propic2.jpg`} alt="" className="rightbarFollowingImage" />
-                    <span className="rightbarFollowingName">Hashini Nishika</span>
-                </div>
-          
-          
-                <div className="rightbarFollowing">
-                    <img src={`${publicFolder}propic2.jpg`} alt="" className="rightbarFollowingImage" />
-                    <span className="rightbarFollowingName">Hashini Nishika</span>
-                </div>
-         
-           
-                <div className="rightbarFollowing">
-                    <img src={`${publicFolder}propic2.jpg`} alt="" className="rightbarFollowingImage" />
-                    <span className="rightbarFollowingName">Hashini Nishika</span>
-                </div>
-                <div className="rightbarFollowing">
-                    <img src={`${publicFolder}propic2.jpg`} alt="" className="rightbarFollowingImage" />
-                    <span className="rightbarFollowingName">Hashini Nishika</span>
-                </div>
+               
             </div>
             </>
         );
