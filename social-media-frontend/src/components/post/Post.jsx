@@ -8,9 +8,9 @@ import {Link} from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 
 export default function Post(post) {
-   //const user=Users.filter((u)=>(u.id===1));
-   //console.log(user[0].userName);
-  // console.log(post);
+    //const user=Users.filter((u)=>(u.id===1));
+    //console.log(user[0].userName);
+    // console.log(post);
   
    const [like,setLike]= useState(post.post.likes.length);
    const [liked,setLiked]= useState(false);
@@ -19,8 +19,12 @@ export default function Post(post) {
 
    const {user:currentUser} =useContext(AuthContext);//use nickname(currentUser), because user alredy here
 
+   useEffect(()=>{
+       setLiked(post.post.likes.includes(currentUser._id));
+   },[post.post.likes,currentUser._id])
 
    const publicFolder=process.env.REACT_APP_PUBLIC_FOLDER;
+   
    useEffect( ()=>{
 
     const fetchUser=async ()=>{
