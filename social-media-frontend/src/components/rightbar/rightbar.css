@@ -72,3 +72,17 @@
     border-radius: 10px;
  
 }
+.rightBarFollow{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: rgb(82, 82, 238);
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 400;
+    cursor: pointer;
+}

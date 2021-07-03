@@ -22,7 +22,7 @@ export default function Profile() {
         };
         fetchUser();
 
-    },[]);
+    },[userName]);
    // console.log(user);
     return (
         <>
